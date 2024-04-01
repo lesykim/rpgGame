@@ -1,14 +1,16 @@
 package rpgGame;
 
-public class Hiller extends Unit implements Skill{
+public class Hiller extends Hero{
 
-	public Hiller(String name) {
-		super(name);
+	public Hiller() {
+		super("힐러");
+		this.hp = 500;
+		this.maxhp = hp;
+		this.limit = ran.nextInt(30)+20;
 	}
 
 	@Override
-	public void runSkill() {
-		// TODO Auto-generated method stub
+	public void Skill() {
 		
 	}
 	
