@@ -38,6 +38,7 @@ public class GameManager {
 		}else {
 			return true;			
 		}
+		
 	}
 	
 	public void run() {
