@@ -12,7 +12,7 @@ public class StageTitle extends Stage{
 				break;
 			}
 		}
-		GameManager.nextStage = "LOBBY";
+		GameManager.nextStage = "BATTLE";
 		return false;
 	}
 
