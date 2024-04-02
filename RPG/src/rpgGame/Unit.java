@@ -9,6 +9,7 @@ public class Unit {
 	private int hp;
 	private int maxhp;
 	private int limit;
+	private int defaultPower;
 	
 	public Unit(String name) {
 		this.name = name;
@@ -45,6 +46,13 @@ public class Unit {
 	public void setLimit(int limit) {
 		this.limit = limit;
 	}
-	
-	
+
+	public int getDefaultPower() {
+		return defaultPower;
+	}
+
+	public void setDefaultPower(int defaultPower) {
+		this.defaultPower = defaultPower;
+	}
+
 }
