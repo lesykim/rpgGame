@@ -26,11 +26,10 @@ public class StageLobby extends Stage{
 		System.out.println("[1.전투] [2.종료]");
 		int select = inputNumber();
 		if(select == 1) {
-			
+			GameManager.nextStage = "LOBBY";			
 		}else if(select == 2) {
-			
+			GameManager.nextStage = "";
 		}
-		GameManager.nextStage = "LOBBY";
 		return false;
 	}
 
