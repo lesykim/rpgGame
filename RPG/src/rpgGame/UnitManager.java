@@ -20,9 +20,9 @@ public class UnitManager {
 				
 				if(obj instanceof Monster) {
 					Monster monster = (Monster) obj;
-					monster.hp = ran.nextInt(200)+100;
-					monster.maxhp = monster.hp;
-					monster.limit = ran.nextInt(20)+10;
+					monster.setHp(ran.nextInt(200)+100);
+					monster.setMaxhp(monster.getHp());
+					monster.setLimit(ran.nextInt(20)+10);
 				}
 			} catch (Exception e) {
 				e.printStackTrace();
