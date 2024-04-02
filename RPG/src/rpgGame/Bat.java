@@ -2,11 +2,8 @@ package rpgGame;
 
 public class Bat extends Monster{
 	
-	public Bat(String name) {
+	public Bat() {
 		super("박쥐");
-		this.hp = ran.nextInt(200)+100;
-		this.maxhp = hp;
-		this.limit = ran.nextInt(20)+10;
 	}
 
 }
