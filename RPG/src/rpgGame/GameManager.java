@@ -14,11 +14,30 @@ public class GameManager {
 		stageList.put("BATTLE", new StageBattle());
 		stageList.put("LOBBY", new StageLobby());
 		
-		nextStage = "TITLE";
+		curStage = "TITLE";
+		nextStage = "LOBBY";
 	}
 	
 	private boolean changeStage() {
-		return true;
+		System.out.println("curStage : " + curStage);
+		System.out.println("nextStage : " + nextStage);
+		
+		Stage stage = stageList.get(curStage);
+		stage.init();
+		
+		curStage = nextStage;
+		
+		while(true) {
+			if(!stage.update()) {
+				break;
+			}
+		}
+		
+		if(nextStage.equals("")) {
+			return false;
+		}else {
+			return true;			
+		}
 	}
 	
 	public void run() {
