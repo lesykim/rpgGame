@@ -4,9 +4,9 @@ public class Hiller extends Hero{
 
 	public Hiller() {
 		super("힐러");
-		this.hp = 500;
-		this.maxhp = hp;
-		this.limit = ran.nextInt(30)+20;
+		this.setHp(500);
+		this.setMaxhp(getHp());
+		this.setLimit(ran.nextInt(30)+20);
 	}
 
 	@Override
