@@ -21,6 +21,8 @@ public class StageBattle extends Stage{
 		unitManager.settingMonster(4);
 		heros = null;
 		heros = unitManager.heros;
+		monsters = null;
+		monsters = unitManager.monsters;
 	}
 	
 	private void heroAttack(int idx) {
@@ -58,12 +60,81 @@ public class StageBattle extends Stage{
 		}
 	}
 	
+	private void printInfo() {
+		System.out.println("=====[Heros]=====");
+		for(Hero hero : heros) {
+			hero.printData();
+		}
+		System.out.println("====[Monsters]===");
+		for(Monster monster : monsters) {
+			monster.printData();
+		}
+	}
+	
+	private void monsterAttack(int index) {
+		Monster monster = monsters.get(index);
+		if(monster.getHp() <= 0) {
+			return;
+		}
+		while(true) {
+			int idx = ran.nextInt(heros.size());
+			Hero hero = heros.get(idx);
+			if(monster.getHp() > 0) {
+				monster.attack(hero);
+				break;
+			}
+		}
+	}
+	
+	private boolean isGameOver() {
+		int n = 0;
+		for(Hero hero : heros) {
+			if(hero.getHp() <= 0) {
+				n++;
+			}
+		}
+		if(n == heros.size()) {
+			return true;
+		}
+		return false;
+	}
+	
+	private boolean isStageClear() {
+		int n = 0;
+		for(Monster monster : monsters) {
+			if(monster.getHp() <= 0) {
+				n++;
+			}
+		}
+		if(n == monsters.size()||isGameOver()) {
+			return true;
+		}
+		return false;
+	}
+	
 	@Override
 	public boolean update() {
-		GameManager.nextStage = "BATTLE";
-		
-		for(int i = 0; i<heros.size(); i++) {
-			heroAttack(i);
+		while(true) {
+			for(int i = 0; i<heros.size(); i++) {
+				printInfo();
+				heroAttack(i);
+				if(isStageClear()) {
+					break;				
+				}
+			}
+			System.out.println("====!!Monster Attack!!====");
+			for(int i = 0; i<monsters.size(); i++) {
+				monsterAttack(i);
+			}
+			if(isStageClear()) {
+				break;				
+			}
+		}
+		if(isGameOver()) {
+			GameManager.nextStage = "";
+		}else {
+			System.out.println("STAGE CLEAR!");
+			GameManager.nextStage = "BATTLE";			
 		}
 		return false;
 	}
