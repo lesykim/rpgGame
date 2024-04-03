@@ -1,8 +1,8 @@
 package rpgGame;
 
-public class Hiller extends Hero{
+public class Healer extends Hero{
 	
-	public Hiller() {
+	public Healer() {
 		super("힐러");
 		this.setHp(500);
 		this.setMaxhp(getHp());
@@ -17,7 +17,7 @@ public class Hiller extends Hero{
 			heroHp = hero.getMaxhp();
 		}
 		hero.setHp(heroHp);
-		System.out.printf("[힐러]스킬을 [%s]에게 사용했습니다!\n[%s]의 체력이 +10 회복됩니다.",hero.getName(),hero.getName());
+		System.out.printf("[힐러]스킬을 [%s]에게 사용했습니다!\n[%s]의 체력이 +10 회복됩니다.\n",hero.getName(),hero.getName());
 	}
 	
 }
