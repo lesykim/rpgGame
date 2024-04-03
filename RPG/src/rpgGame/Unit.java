@@ -2,7 +2,7 @@ package rpgGame;
 
 import java.util.Random;
 
-public class Unit {
+public abstract class Unit {
 	public Random ran = new Random();
 	
 	private String name;
@@ -54,5 +54,11 @@ public class Unit {
 	public void setDefaultPower(int defaultPower) {
 		this.defaultPower = defaultPower;
 	}
+	
+	public void printData() {
+		System.out.printf("[%s] [%d/%d] [%d]\n",name,hp,maxhp,limit+defaultPower);
+	}
+	
+	public abstract void attack(Unit target);
 
 }
