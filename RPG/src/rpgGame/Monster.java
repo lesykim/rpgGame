@@ -7,7 +7,7 @@ public class Monster extends Unit{
 	}
 
 	@Override
-	void attack(Unit target) {
+	public void attack(Unit target) {
 		int attack = ran.nextInt(getLimit())+getDefaultPower();
 		// 쉴드 구현
 		Hero hero = (Hero) target;
