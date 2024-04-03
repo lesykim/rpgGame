@@ -11,6 +11,12 @@ public class UnitManager {
 	public ArrayList<Monster> monsters;
 	public ArrayList<Hero> heros;
 	
+	public UnitManager() {
+		monsters = new ArrayList<>();
+		heros = new ArrayList<>();
+		settingHero();
+	}
+	
 	public void settingMonster(int size) {
 		for(int i = 0; i<size; i++) {
 			int n = ran.nextInt(3);
@@ -23,6 +29,7 @@ public class UnitManager {
 					monster.setHp(ran.nextInt(200)+100);
 					monster.setMaxhp(monster.getHp());
 					monster.setLimit(ran.nextInt(20)+10);
+					monsters.add(monster);
 				}
 			} catch (Exception e) {
 				e.printStackTrace();
