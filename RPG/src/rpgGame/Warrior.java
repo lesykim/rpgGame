@@ -16,7 +16,7 @@ public class Warrior extends Hero{
 	@Override
 	public void Skill(Hero hero) {
 		isSkillOn = true;
-		System.out.printf("[전사]스킬을 사용했습니다!\n다음턴 전사의 공격력은 두배가 됩니다.\n");
+		System.out.printf("[전사]스킬을 사용했습니다!\n다음턴 전사의 공격력은 2배가 됩니다.\n");
 	}
 
 	public boolean isSkillOn() {
